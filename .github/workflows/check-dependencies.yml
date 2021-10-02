@@ -1,0 +1,22 @@
+name: Check Dependencies
+
+on: [push]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        check-latest: true
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Check Dependencies
+      run: node_modules/.bin/coffee tools/check-dependencies.coffee
