@@ -33,8 +33,8 @@
         "floweret": "0.13.1"
     },
     "devDependencies": {
-        "coffeescript": "2.5.1",
-        "mocha": "8.2.1",
+        "coffeescript": "2.6.0",
+        "mocha": "9.1.2",
         "nyc": "15.1.0",
         "should": "13.2.3"
     }
