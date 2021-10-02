@@ -16,7 +16,7 @@ jobs:
         check-latest: true
 
     - name: Install Dependencies
-      run: npm install
+      run: npm ci
 
     - name: Check Dependencies
-      run: tools/check-dependencies.coffee
+      run: node_modules/.bin/coffee tools/check-dependencies.coffee
