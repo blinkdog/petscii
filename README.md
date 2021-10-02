@@ -45,7 +45,7 @@ translate between PETSCII and ASCII.
 
 ### decode(mode, buffer) -> String
 Translate a Buffer with PETSCII data to an ASCII String:
-* `mode` - One of `shifted` or `unshifted`
+* `mode` - One of `'shifted'` or `'unshifted'`
 * `buffer` - A `Buffer` object with data to be decoded
 
 `decode` will return a UTF-8 encoded String
@@ -55,7 +55,7 @@ inputs are provided.
 
 ### encode(mode, string) -> Buffer
 Translate an ASCII String to a Buffer with PETSCII data:
-* `mode` - One of `shifted` or `unshifted`
+* `mode` - One of `'shifted'` or `'unshifted'`
 * `string` - A String containing data to be encoded
 
 `encode` will return a Buffer with PETSCII encoded data
@@ -65,15 +65,15 @@ inputs are provided.
 
 #### Unknown Characters
 PETSCII does not include an encoding for all ASCII characters. For
-example, curly braces like { and } do not exist in PETSCII. Thus,
+example, curly braces like `{` and `}` do not exist in PETSCII. Thus,
 there is no PETSCII code to represent them.
 
 In the case of attempting to encode unknown characters, `encode` will
-replace them with a code of `0x3f` ('?') letting a question mark stand
+replace them with a code of `0x3f` (`?`) letting a question mark stand
 in as the character that could not be represented in PETSCII.
 
 Note that one must be careful which `mode` one is using to `encode`.
-An ASCII string like "Hello, world!" can be encoded accurately in
+An ASCII string like `Hello, world!` can be encoded accurately in
 `shifted` mode. However, in `unshifted` mode, it will contain several
 question marks due to the lowercase letters that cannot be encoded.
 
@@ -100,7 +100,7 @@ You can see a coverage report by invoking the `coverage` target:
     node_modules/.bin/cake coverage
 
 ## License
-petscii
+petscii  
 Copyright 2021 Patrick Meade.
 
 This program is free software: you can redistribute it and/or modify
